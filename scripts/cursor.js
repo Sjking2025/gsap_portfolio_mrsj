@@ -1,30 +1,27 @@
 /**
- * cursor.js - Magnetic Cursor System
- * Custom cursor with smooth following and magnetic hover effects
+ * cursor.js - Premium Magnetic Cursor System
+ * Buttery smooth cursor with advanced magnetic effects
  */
 
 const CursorManager = {
     cursor: null,
     dot: null,
     ring: null,
+    trail: [],
 
     // Position tracking
     mouseX: 0,
     mouseY: 0,
-    dotX: 0,
-    dotY: 0,
-    ringX: 0,
-    ringY: 0,
 
-    // GSAP quickTo functions for smooth animation
+    // GSAP quickTo functions for buttery animation
     dotXTo: null,
     dotYTo: null,
     ringXTo: null,
     ringYTo: null,
 
-    // Magnetic elements
-    magneticElements: [],
+    // State
     isHovering: false,
+    isClicking: false,
 
     /**
      * Initialize the cursor system
@@ -41,84 +38,194 @@ const CursorManager = {
         this.ring = document.querySelector('.cursor__ring');
 
         if (!this.cursor || !this.dot || !this.ring) {
-            console.warn('Cursor elements not found');
-            return;
+            this.createCursor();
         }
 
-        // Initialize GSAP quickTo for smooth animations
+        // Initialize GSAP quickTo for buttery smooth animations
         if (typeof gsap !== 'undefined') {
-            this.dotXTo = gsap.quickTo(this.dot, 'x', { duration: 0.1, ease: 'power2.out' });
-            this.dotYTo = gsap.quickTo(this.dot, 'y', { duration: 0.1, ease: 'power2.out' });
-            this.ringXTo = gsap.quickTo(this.ring, 'x', { duration: 0.3, ease: 'power2.out' });
-            this.ringYTo = gsap.quickTo(this.ring, 'y', { duration: 0.3, ease: 'power2.out' });
+            // Dot follows mouse almost instantly
+            this.dotXTo = gsap.quickTo(this.dot, 'x', {
+                duration: 0.15,
+                ease: 'power3.out'
+            });
+            this.dotYTo = gsap.quickTo(this.dot, 'y', {
+                duration: 0.15,
+                ease: 'power3.out'
+            });
+
+            // Ring has more lag for smooth trail effect
+            this.ringXTo = gsap.quickTo(this.ring, 'x', {
+                duration: 0.5,
+                ease: 'power2.out'
+            });
+            this.ringYTo = gsap.quickTo(this.ring, 'y', {
+                duration: 0.5,
+                ease: 'power2.out'
+            });
         }
 
         // Set up event listeners
         this.setupEventListeners();
 
         // Find magnetic elements
-        this.findMagneticElements();
+        this.setupMagneticElements();
 
-        console.log('🖱️ Custom cursor initialized');
+        // Create cursor trail
+        this.createCursorTrail();
+
+        console.log('🖱️ Premium cursor initialized');
     },
 
     /**
      * Check if device supports hover
-     * @returns {boolean}
      */
     supportsHover() {
         return window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     },
 
     /**
+     * Create cursor elements if they don't exist
+     */
+    createCursor() {
+        this.cursor = document.createElement('div');
+        this.cursor.className = 'cursor';
+
+        this.dot = document.createElement('div');
+        this.dot.className = 'cursor__dot';
+
+        this.ring = document.createElement('div');
+        this.ring.className = 'cursor__ring';
+
+        this.cursor.appendChild(this.dot);
+        this.cursor.appendChild(this.ring);
+        document.body.appendChild(this.cursor);
+    },
+
+    /**
+     * Create subtle cursor trail
+     */
+    createCursorTrail() {
+        const trailCount = 5;
+
+        for (let i = 0; i < trailCount; i++) {
+            const trail = document.createElement('div');
+            trail.className = 'cursor__trail';
+            trail.style.cssText = `
+                position: fixed;
+                width: ${8 - i}px;
+                height: ${8 - i}px;
+                border-radius: 50%;
+                background: rgba(var(--primary-rgb), ${0.3 - i * 0.05});
+                pointer-events: none;
+                z-index: 9998;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+            document.body.appendChild(trail);
+            this.trail.push({
+                element: trail,
+                x: 0,
+                y: 0
+            });
+        }
+    },
+
+    /**
      * Set up mouse and element event listeners
      */
     setupEventListeners() {
-        // Track mouse movement
+        // Track mouse movement with requestAnimationFrame for smoothness
+        let rafId;
+
         document.addEventListener('mousemove', (e) => {
             this.mouseX = e.clientX;
             this.mouseY = e.clientY;
-            this.updateCursor();
+
+            // Cancel previous frame and schedule new one
+            if (rafId) cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => this.updateCursor());
         });
 
         // Hide cursor when leaving window
         document.addEventListener('mouseleave', () => {
-            gsap.to(this.cursor, { opacity: 0, duration: 0.3 });
+            gsap.to([this.cursor, ...this.trail.map(t => t.element)], {
+                opacity: 0,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
         });
 
         document.addEventListener('mouseenter', () => {
-            gsap.to(this.cursor, { opacity: 1, duration: 0.3 });
+            gsap.to(this.cursor, {
+                opacity: 1,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
         });
 
-        // Click effect
+        // Click effects
         document.addEventListener('mousedown', () => {
-            gsap.to(this.ring, { scale: 0.8, duration: 0.1 });
+            this.isClicking = true;
+            gsap.to(this.dot, {
+                scale: 0.5,
+                duration: 0.15,
+                ease: 'power3.out'
+            });
+            gsap.to(this.ring, {
+                scale: 0.8,
+                duration: 0.2,
+                ease: 'power2.out'
+            });
         });
 
         document.addEventListener('mouseup', () => {
-            gsap.to(this.ring, { scale: 1, duration: 0.2 });
+            this.isClicking = false;
+            gsap.to(this.dot, {
+                scale: 1,
+                duration: 0.3,
+                ease: 'elastic.out(1, 0.5)'
+            });
+            gsap.to(this.ring, {
+                scale: 1,
+                duration: 0.4,
+                ease: 'elastic.out(1, 0.3)'
+            });
         });
     },
 
     /**
-     * Find and attach magnetic behavior to elements
+     * Set up magnetic behavior for interactive elements
      */
-    findMagneticElements() {
+    setupMagneticElements() {
         const selectors = [
             '.btn--magnetic',
             '.card--3d',
             '.nav__link',
             '.social-link',
             '.theme-selector__toggle',
-            '.audio-toggle'
+            '.audio-toggle',
+            '.tag',
+            '.skill-category',
+            '.timeline-item'
         ];
 
-        this.magneticElements = document.querySelectorAll(selectors.join(', '));
+        document.querySelectorAll(selectors.join(', ')).forEach(el => {
+            el.addEventListener('mouseenter', () => this.onElementEnter(el));
+            el.addEventListener('mouseleave', () => this.onElementLeave(el));
+            el.addEventListener('mousemove', (e) => this.onElementMove(e, el));
+        });
 
-        this.magneticElements.forEach(el => {
-            el.addEventListener('mouseenter', () => this.onMagneticEnter(el));
-            el.addEventListener('mouseleave', () => this.onMagneticLeave(el));
-            el.addEventListener('mousemove', (e) => this.onMagneticMove(e, el));
+        // Text links get subtle effect
+        document.querySelectorAll('a:not(.btn):not(.social-link):not(.nav__link)').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                gsap.to(this.dot, { scale: 2, opacity: 0.5, duration: 0.3 });
+                gsap.to(this.ring, { scale: 0.5, opacity: 0, duration: 0.3 });
+            });
+            el.addEventListener('mouseleave', () => {
+                gsap.to(this.dot, { scale: 1, opacity: 1, duration: 0.3 });
+                gsap.to(this.ring, { scale: 1, opacity: 1, duration: 0.3 });
+            });
         });
     },
 
@@ -132,19 +239,39 @@ const CursorManager = {
             this.ringXTo(this.mouseX);
             this.ringYTo(this.mouseY);
         }
+
+        // Update trail with delay
+        this.trail.forEach((trail, i) => {
+            gsap.to(trail.element, {
+                x: this.mouseX,
+                y: this.mouseY,
+                opacity: this.isHovering ? 0 : 0.3 - i * 0.05,
+                duration: 0.3 + i * 0.1,
+                ease: 'power2.out',
+                delay: i * 0.02
+            });
+        });
     },
 
     /**
      * Handle magnetic element hover enter
-     * @param {HTMLElement} el - The element being hovered
      */
-    onMagneticEnter(el) {
+    onElementEnter(el) {
         this.isHovering = true;
         this.cursor.classList.add('hovering');
 
-        // Scale up element slightly
-        gsap.to(el, {
-            scale: 1.03,
+        // Expand ring
+        gsap.to(this.ring, {
+            scale: 2,
+            borderWidth: 1,
+            opacity: 0.5,
+            duration: 0.4,
+            ease: 'power2.out'
+        });
+
+        // Hide dot
+        gsap.to(this.dot, {
+            scale: 0,
             duration: 0.3,
             ease: 'power2.out'
         });
@@ -152,28 +279,40 @@ const CursorManager = {
 
     /**
      * Handle magnetic element hover leave
-     * @param {HTMLElement} el - The element being left
      */
-    onMagneticLeave(el) {
+    onElementLeave(el) {
         this.isHovering = false;
         this.cursor.classList.remove('hovering');
 
-        // Reset element transform
-        gsap.to(el, {
+        // Reset ring
+        gsap.to(this.ring, {
             scale: 1,
+            borderWidth: 2,
+            opacity: 1,
+            duration: 0.4,
+            ease: 'power2.out'
+        });
+
+        // Show dot
+        gsap.to(this.dot, {
+            scale: 1,
+            duration: 0.4,
+            ease: 'elastic.out(1, 0.5)'
+        });
+
+        // Reset element
+        gsap.to(el, {
             x: 0,
             y: 0,
-            duration: 0.3,
-            ease: 'power2.out'
+            duration: 0.6,
+            ease: 'elastic.out(1, 0.3)'
         });
     },
 
     /**
-     * Handle magnetic movement - pull cursor towards element center
-     * @param {MouseEvent} e - Mouse event
-     * @param {HTMLElement} el - The magnetic element
+     * Handle magnetic movement - pull element towards cursor
      */
-    onMagneticMove(e, el) {
+    onElementMove(e, el) {
         if (!this.isHovering) return;
 
         const rect = el.getBoundingClientRect();
@@ -183,12 +322,22 @@ const CursorManager = {
         const deltaX = e.clientX - centerX;
         const deltaY = e.clientY - centerY;
 
+        // Calculate magnetic strength based on element size
+        const strength = Math.min(rect.width, rect.height) > 100 ? 0.2 : 0.35;
+
         // Move element towards cursor (magnetic effect)
-        const strength = 0.3;
         gsap.to(el, {
             x: deltaX * strength,
             y: deltaY * strength,
-            duration: 0.3,
+            duration: 0.4,
+            ease: 'power2.out'
+        });
+
+        // Move ring to element center
+        gsap.to(this.ring, {
+            x: centerX + deltaX * 0.2,
+            y: centerY + deltaY * 0.2,
+            duration: 0.4,
             ease: 'power2.out'
         });
     },
@@ -197,7 +346,7 @@ const CursorManager = {
      * Refresh magnetic elements (call after DOM changes)
      */
     refresh() {
-        this.findMagneticElements();
+        this.setupMagneticElements();
     }
 };
 
