@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Metagame Layer Portal - A premium gaming portfolio experience with cinematic transitions and immersive interactions">
-    <title>Metagame Layer Portal</title>
-    
+    <meta name="description"
+        content="Sanjay R - Frontend Developer crafting immersive web experiences with GSAP, React, and modern JavaScript">
+    <meta name="keywords" content="Sanjay R, Frontend Developer, MERN Stack, React, GSAP, Portfolio">
+    <meta name="author" content="Sanjay R">
+    <title>Sanjay R | Frontend Developer Portfolio</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sanjay R | Frontend Developer Portfolio">
+    <meta property="og:description"
+        content="Frontend Developer crafting immersive web experiences with GSAP and modern JavaScript">
+    <meta property="og:type" content="website">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/animations.css">
 </head>
+
 <body data-theme="velvet-dusk">
     <!-- Custom Cursor -->
     <div class="cursor" aria-hidden="true">
@@ -31,24 +44,25 @@
     <nav class="nav" id="nav">
         <div class="nav__container">
             <a href="#hero" class="nav__logo">
-                <span class="nav__logo-text">METALAYER</span>
+                <span class="nav__logo-text">SANJAY R</span>
             </a>
-            
+
             <ul class="nav__links">
-                <li><a href="#nexus" class="nav__link">Nexus</a></li>
-                <li><a href="#vault" class="nav__link">Vault</a></li>
-                <li><a href="#prologue" class="nav__link">Prologue</a></li>
-                <li><a href="#about" class="nav__link">About</a></li>
+                <li><a href="#projects" class="nav__link">Projects</a></li>
+                <li><a href="#skills" class="nav__link">Skills</a></li>
+                <li><a href="#journey" class="nav__link">Journey</a></li>
                 <li><a href="#contact" class="nav__link nav__link--cta">Contact</a></li>
             </ul>
-            
+
             <div class="nav__controls">
                 <!-- Theme Selector -->
                 <div class="theme-selector">
                     <button class="theme-selector__toggle" aria-label="Select theme" aria-expanded="false">
-                        <svg class="theme-selector__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="5"/>
-                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        <svg class="theme-selector__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="5" />
+                            <path
+                                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
                         </svg>
                     </button>
                     <div class="theme-selector__dropdown" role="menu">
@@ -94,20 +108,22 @@
                         </button>
                     </div>
                 </div>
-                
+
                 <!-- Audio Control -->
                 <button class="audio-toggle" aria-label="Toggle audio" data-playing="false">
-                    <svg class="audio-toggle__icon audio-toggle__icon--on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    <svg class="audio-toggle__icon audio-toggle__icon--on" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
                     </svg>
-                    <svg class="audio-toggle__icon audio-toggle__icon--off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                        <line x1="23" y1="9" x2="17" y2="15"/>
-                        <line x1="17" y1="9" x2="23" y2="15"/>
+                    <svg class="audio-toggle__icon audio-toggle__icon--off" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                        <line x1="23" y1="9" x2="17" y2="15" />
+                        <line x1="17" y1="9" x2="23" y2="15" />
                     </svg>
                 </button>
-                
+
                 <!-- Mobile Menu Toggle -->
                 <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false">
                     <span class="nav__burger-line"></span>
@@ -116,14 +132,13 @@
                 </button>
             </div>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div class="nav__mobile-menu" aria-hidden="true">
             <ul class="nav__mobile-links">
-                <li><a href="#nexus" class="nav__mobile-link">Nexus</a></li>
-                <li><a href="#vault" class="nav__mobile-link">Vault</a></li>
-                <li><a href="#prologue" class="nav__mobile-link">Prologue</a></li>
-                <li><a href="#about" class="nav__mobile-link">About</a></li>
+                <li><a href="#projects" class="nav__mobile-link">Projects</a></li>
+                <li><a href="#skills" class="nav__mobile-link">Skills</a></li>
+                <li><a href="#journey" class="nav__mobile-link">Journey</a></li>
                 <li><a href="#contact" class="nav__mobile-link">Contact</a></li>
             </ul>
         </div>
@@ -134,428 +149,450 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
+        <!-- ==================== HERO SECTION ==================== -->
         <section id="hero" class="section section--hero">
             <div class="hero__background">
                 <div class="hero__gradient"></div>
                 <div class="hero__particles" aria-hidden="true"></div>
             </div>
             <div class="hero__content">
-                <span class="hero__subtitle">Welcome to the</span>
+                <span class="hero__subtitle">Frontend Developer crafting</span>
                 <h1 class="hero__title">
-                    <span class="hero__title-line">Metagame</span>
-                    <span class="hero__title-line hero__title-line--accent">Layer Portal</span>
+                    <span class="hero__title-line">Immersive Web</span>
+                    <span class="hero__title-line hero__title-line--accent">Experiences</span>
                 </h1>
                 <p class="hero__description">
-                    Explore a universe where gaming meets innovation. Discover projects, achievements, and the story behind the code.
+                    Hi, I'm <strong>Sanjay R</strong> — a Full Stack Developer from Tamil Nadu, India.
+                    I build interactive frontends, AI-powered tools, and student-focused apps.
+                    Currently exploring the intersection of modern JavaScript and immersive design.
+                </p>
+                <p class="hero__micro-copy">
+                    ✨ This portfolio is built with <strong>Vanilla JS, CSS, GSAP</strong> — no frameworks.
                 </p>
                 <div class="hero__cta-group">
-                    <a href="#nexus" class="btn btn--primary btn--magnetic">
-                        <span class="btn__text">Enter Nexus</span>
+                    <a href="#projects" class="btn btn--primary btn--magnetic">
+                        <span class="btn__text">View Metagame Portal</span>
                         <span class="btn__glow"></span>
                     </a>
-                    <a href="#prologue" class="btn btn--secondary btn--magnetic">
-                        <span class="btn__text">Watch Story</span>
+                    <a href="mailto:sanjayias91@gmail.com" class="btn btn--secondary btn--magnetic">
+                        <span class="btn__text">Contact Me</span>
                     </a>
                 </div>
                 <div class="hero__scroll-indicator">
                     <span class="hero__scroll-text">Scroll to explore</span>
                     <div class="hero__scroll-arrow">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 5v14M5 12l7 7 7-7"/>
+                            <path d="M12 5v14M5 12l7 7 7-7" />
                         </svg>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Nexus Section - Social Hub -->
-        <section id="nexus" class="section section--nexus">
+        <!-- ==================== PROJECTS SECTION ==================== -->
+        <section id="projects" class="section section--projects">
             <div class="section__container">
                 <header class="section__header">
-                    <span class="section__label">01 / Social Hub</span>
-                    <h2 class="section__title">The Nexus</h2>
+                    <span class="section__label">01 / My Work</span>
+                    <h2 class="section__title">Projects</h2>
                     <p class="section__description">
-                        A convergence point where ideas, projects, and connections come together. 
-                        This is where the journey begins.
+                        Focused on interactive frontends and practical tools — here's what I've built.
                     </p>
                 </header>
-                
-                <div class="nexus__grid">
-                    <!-- Featured Project Card -->
-                    <article class="card card--featured card--3d">
-                        <div class="card__glow"></div>
-                        <div class="card__content">
-                            <div class="card__badge">Featured</div>
-                            <h3 class="card__title">Project Radiant</h3>
-                            <p class="card__text">
-                                A revolutionary approach to web experiences, combining cutting-edge 
-                                technology with immersive design principles.
-                            </p>
-                            <div class="card__stats">
-                                <span class="card__stat">
-                                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                                    </svg>
-                                    4.9
-                                </span>
-                                <span class="card__stat">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                                        <circle cx="12" cy="12" r="3"/>
-                                    </svg>
-                                    2.4k
-                                </span>
-                            </div>
-                            <a href="#" class="card__link btn--magnetic">Explore →</a>
+
+                <!-- Featured Project: Metagame Portal -->
+                <article class="featured-project card--3d">
+                    <div class="featured-project__glow"></div>
+                    <div class="featured-project__content">
+                        <div class="featured-project__header">
+                            <span class="card__badge">Featured Project</span>
+                            <h3 class="featured-project__title">Metagame Layer Gaming Portal</h3>
+                            <p class="featured-project__subtitle">Vanilla JS + GSAP Cinematic Experience</p>
                         </div>
-                    </article>
-                    
-                    <!-- Project Cards -->
+
+                        <p class="featured-project__description">
+                            A cinematic single-page portal with scroll-driven world transitions,
+                            magnetic cursor, and persistent audio. Built entirely without frameworks
+                            to showcase pure JavaScript capabilities.
+                        </p>
+
+                        <div class="featured-project__tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">Vanilla JS</span>
+                            <span class="tag">GSAP</span>
+                            <span class="tag">ScrollTrigger</span>
+                            <span class="tag">UI/UX</span>
+                        </div>
+
+                        <ul class="featured-project__bullets">
+                            <li>Scroll-linked timeline for section transitions (Nexus, Vault, Prologue)</li>
+                            <li>Custom magnetic cursor with element attraction and hover micro-interactions</li>
+                            <li>10 premium color themes with instant CSS variable switching</li>
+                            <li>Achievement system that unlocks on exploration</li>
+                            <li>Performance-conscious animations with reduced motion support</li>
+                        </ul>
+
+                        <div class="featured-project__links">
+                            <a href="https://gsap-portfolio-mrsj.vercel.app" target="_blank"
+                                class="btn btn--primary btn--magnetic">
+                                <span class="btn__text">Live Demo</span>
+                            </a>
+                            <a href="https://github.com/Sjking2025/gsap_portfolio_mrsj" target="_blank"
+                                class="btn btn--secondary btn--magnetic">
+                                <span class="btn__text">Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Secondary Projects Grid -->
+                <div class="projects__grid">
+                    <!-- Weather App -->
                     <article class="card card--3d">
                         <div class="card__glow"></div>
                         <div class="card__content">
                             <div class="card__icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
-                                    <polyline points="2 17 12 22 22 17"/>
-                                    <polyline points="2 12 12 17 22 12"/>
+                                    <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
                                 </svg>
                             </div>
-                            <h3 class="card__title">Zigma Protocol</h3>
+                            <h3 class="card__title">Weather App</h3>
+                            <p class="card__subtitle">MERN Stack</p>
                             <p class="card__text">
-                                Next-generation data architecture with enhanced security layers.
+                                Full-stack weather forecast application with real-time data,
+                                location-based updates, and responsive design.
                             </p>
-                            <a href="#" class="card__link btn--magnetic">Learn More →</a>
+                            <div class="card__tags">
+                                <span class="tag tag--small">MongoDB</span>
+                                <span class="tag tag--small">Express</span>
+                                <span class="tag tag--small">React</span>
+                                <span class="tag tag--small">Node.js</span>
+                            </div>
+                            <div class="card__links">
+                                <a href="#" class="card__link btn--magnetic">Live Demo →</a>
+                                <a href="#" class="card__link btn--magnetic">Source →</a>
+                            </div>
                         </div>
                     </article>
-                    
+
+                    <!-- To-Do App -->
                     <article class="card card--3d">
                         <div class="card__glow"></div>
                         <div class="card__content">
                             <div class="card__icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                    <path d="M9 11l3 3L22 4" />
+                                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                                 </svg>
                             </div>
-                            <h3 class="card__title">Azul Network</h3>
+                            <h3 class="card__title">Unique To-Do App</h3>
+                            <p class="card__subtitle">MERN Stack</p>
                             <p class="card__text">
-                                Distributed computing platform for seamless global connectivity.
+                                Productivity-focused task manager with user authentication,
+                                cloud database integration, and deployed to production.
                             </p>
-                            <a href="#" class="card__link btn--magnetic">Discover →</a>
+                            <div class="card__tags">
+                                <span class="tag tag--small">MongoDB</span>
+                                <span class="tag tag--small">Express</span>
+                                <span class="tag tag--small">React</span>
+                                <span class="tag tag--small">Node.js</span>
+                            </div>
+                            <div class="card__links">
+                                <a href="#" class="card__link btn--magnetic">Live Demo →</a>
+                                <a href="#" class="card__link btn--magnetic">Source →</a>
+                            </div>
                         </div>
                     </article>
-                    
+
+                    <!-- Currency Converter -->
                     <article class="card card--3d">
                         <div class="card__glow"></div>
                         <div class="card__content">
                             <div class="card__icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
+                                    <path d="M12 18V6" />
                                 </svg>
                             </div>
-                            <h3 class="card__title">Sentinel Core</h3>
+                            <h3 class="card__title">Currency Converter</h3>
+                            <p class="card__subtitle">Java Application</p>
                             <p class="card__text">
-                                Advanced security framework protecting digital ecosystems.
+                                Real-time multi-currency conversion tool with streamlined
+                                user interface and accurate exchange rates.
                             </p>
-                            <a href="#" class="card__link btn--magnetic">Explore →</a>
+                            <div class="card__tags">
+                                <span class="tag tag--small">Java</span>
+                                <span class="tag tag--small">APIs</span>
+                                <span class="tag tag--small">OOP</span>
+                            </div>
+                            <div class="card__links">
+                                <a href="https://github.com/Sjking2025" class="card__link btn--magnetic">Source →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- More Projects Coming -->
+                    <article class="card card--3d card--coming-soon">
+                        <div class="card__glow"></div>
+                        <div class="card__content">
+                            <div class="card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg>
+                            </div>
+                            <h3 class="card__title">Coming Soon</h3>
+                            <p class="card__subtitle">In Development</p>
+                            <p class="card__text">
+                                More exciting projects are in the works. Stay tuned for AI-powered
+                                tools and student-focused applications.
+                            </p>
+                            <div class="card__tags">
+                                <span class="tag tag--small">AI</span>
+                                <span class="tag tag--small">React</span>
+                                <span class="tag tag--small">Node.js</span>
+                            </div>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Vault Section - Achievements -->
-        <section id="vault" class="section section--vault">
+        <!-- ==================== SKILLS SECTION ==================== -->
+        <section id="skills" class="section section--skills">
             <div class="section__container">
                 <header class="section__header">
-                    <span class="section__label">02 / Achievements</span>
-                    <h2 class="section__title">The Vault</h2>
+                    <span class="section__label">02 / What I Do</span>
+                    <h2 class="section__title">Skills & Tech Stack</h2>
                     <p class="section__description">
-                        Your journey through this portal unlocks achievements. 
-                        Explore, interact, and collect them all.
+                        Focused on frontend interaction, full-stack fundamentals, and continuous learning.
                     </p>
                 </header>
-                
-                <div class="vault__progress">
-                    <div class="vault__progress-bar">
-                        <div class="vault__progress-fill" style="--progress: 0%"></div>
-                    </div>
-                    <span class="vault__progress-text">0 / 6 Achievements Unlocked</span>
-                </div>
-                
-                <div class="vault__grid">
-                    <article class="achievement-card" data-achievement="explorer">
-                        <div class="achievement-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
-                            </svg>
-                        </div>
-                        <h3 class="achievement-card__title">Explorer</h3>
-                        <p class="achievement-card__description">Visit all sections of the portal</p>
-                        <div class="achievement-card__status">
-                            <span class="achievement-card__lock">🔒</span>
-                        </div>
-                    </article>
-                    
-                    <article class="achievement-card" data-achievement="nexus-visitor">
-                        <div class="achievement-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                            </svg>
-                        </div>
-                        <h3 class="achievement-card__title">Nexus Member</h3>
-                        <p class="achievement-card__description">Enter the Nexus hub</p>
-                        <div class="achievement-card__status">
-                            <span class="achievement-card__lock">🔒</span>
-                        </div>
-                    </article>
-                    
-                    <article class="achievement-card" data-achievement="audiophile">
-                        <div class="achievement-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-                            </svg>
-                        </div>
-                        <h3 class="achievement-card__title">Audiophile</h3>
-                        <p class="achievement-card__description">Enable cinematic audio</p>
-                        <div class="achievement-card__status">
-                            <span class="achievement-card__lock">🔒</span>
-                        </div>
-                    </article>
-                    
-                    <article class="achievement-card" data-achievement="storyteller">
-                        <div class="achievement-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                            </svg>
-                        </div>
-                        <h3 class="achievement-card__title">Storyteller</h3>
-                        <p class="achievement-card__description">Complete the Prologue</p>
-                        <div class="achievement-card__status">
-                            <span class="achievement-card__lock">🔒</span>
-                        </div>
-                    </article>
-                    
-                    <article class="achievement-card" data-achievement="designer">
-                        <div class="achievement-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="5"/>
-                                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"/>
-                            </svg>
-                        </div>
-                        <h3 class="achievement-card__title">Theme Master</h3>
-                        <p class="achievement-card__description">Change the color theme</p>
-                        <div class="achievement-card__status">
-                            <span class="achievement-card__lock">🔒</span>
-                        </div>
-                    </article>
-                    
-                    <article class="achievement-card" data-achievement="connector">
-                        <div class="achievement-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                            </svg>
-                        </div>
-                        <h3 class="achievement-card__title">Connector</h3>
-                        <p class="achievement-card__description">Reach the Contact section</p>
-                        <div class="achievement-card__status">
-                            <span class="achievement-card__lock">🔒</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
 
-        <!-- Prologue Section - Story/Lore -->
-        <section id="prologue" class="section section--prologue">
-            <div class="prologue__wrapper">
-                <header class="section__header">
-                    <span class="section__label">03 / Story</span>
-                    <h2 class="section__title">The Prologue</h2>
-                </header>
-                
-                <div class="prologue__content">
-                    <div class="prologue__panel" data-panel="1">
-                        <div class="prologue__panel-content">
-                            <span class="prologue__chapter">Chapter I</span>
-                            <h3 class="prologue__heading">The Beginning</h3>
-                            <p class="prologue__text">
-                                In the vast digital landscape, where pixels meet purpose, 
-                                a new kind of creator emerged. Armed with code as their canvas 
-                                and interaction as their medium, they set out to blur the lines 
-                                between functionality and artistry.
-                            </p>
+                <div class="skills__grid">
+                    <!-- Frontend & UX -->
+                    <div class="skill-category">
+                        <div class="skill-category__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                <line x1="3" y1="9" x2="21" y2="9" />
+                                <line x1="9" y1="21" x2="9" y2="9" />
+                            </svg>
                         </div>
-                        <div class="prologue__panel-visual">
-                            <div class="prologue__orb prologue__orb--1"></div>
-                        </div>
+                        <h3 class="skill-category__title">Frontend & UX</h3>
+                        <ul class="skill-category__list">
+                            <li>HTML5, CSS3 (Flexbox, Grid)</li>
+                            <li>JavaScript (ES6+), React.js</li>
+                            <li>GSAP, ScrollTrigger</li>
+                            <li>Responsive Design</li>
+                            <li>Bootstrap, Figma</li>
+                        </ul>
                     </div>
-                    
-                    <div class="prologue__panel" data-panel="2">
-                        <div class="prologue__panel-content">
-                            <span class="prologue__chapter">Chapter II</span>
-                            <h3 class="prologue__heading">The Journey</h3>
-                            <p class="prologue__text">
-                                Through countless iterations and midnight debugging sessions, 
-                                expertise was forged. Each project became a stepping stone, 
-                                each challenge a lesson. The path wasn't always clear, 
-                                but the destination was always worth it.
-                            </p>
+
+                    <!-- Backend & Databases -->
+                    <div class="skill-category">
+                        <div class="skill-category__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                            </svg>
                         </div>
-                        <div class="prologue__panel-visual">
-                            <div class="prologue__orb prologue__orb--2"></div>
-                        </div>
+                        <h3 class="skill-category__title">Backend & Databases</h3>
+                        <ul class="skill-category__list">
+                            <li>Node.js, Express.js</li>
+                            <li>MongoDB, SQL</li>
+                            <li>Java, Python</li>
+                            <li>REST APIs</li>
+                            <li>Authentication</li>
+                        </ul>
                     </div>
-                    
-                    <div class="prologue__panel" data-panel="3">
-                        <div class="prologue__panel-content">
-                            <span class="prologue__chapter">Chapter III</span>
-                            <h3 class="prologue__heading">The Vision</h3>
-                            <p class="prologue__text">
-                                Today, the mission remains: to create digital experiences 
-                                that don't just function—they inspire. Every animation tells a story, 
-                                every interaction builds connection. This is the metagame layer, 
-                                where technology becomes magic.
-                            </p>
+
+                    <!-- Tools & Practices -->
+                    <div class="skill-category">
+                        <div class="skill-category__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                            </svg>
                         </div>
-                        <div class="prologue__panel-visual">
-                            <div class="prologue__orb prologue__orb--3"></div>
+                        <h3 class="skill-category__title">Tools & Practices</h3>
+                        <ul class="skill-category__list">
+                            <li>Git, GitHub</li>
+                            <li>VS Code, Postman</li>
+                            <li>Power BI, Canva</li>
+                            <li>WordPress</li>
+                            <li>Microsoft Office</li>
+                        </ul>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="skill-category">
+                        <div class="skill-category__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="prologue__progress">
-                    <div class="prologue__progress-track">
-                        <div class="prologue__progress-fill"></div>
-                    </div>
-                    <div class="prologue__progress-dots">
-                        <span class="prologue__dot" data-panel="1"></span>
-                        <span class="prologue__dot" data-panel="2"></span>
-                        <span class="prologue__dot" data-panel="3"></span>
+                        <h3 class="skill-category__title">Soft Skills</h3>
+                        <ul class="skill-category__list">
+                            <li>Problem Solving</li>
+                            <li>Fast Learner</li>
+                            <li>Leadership</li>
+                            <li>Adaptability</li>
+                            <li>Team Collaboration</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="section section--about">
+        <!-- ==================== JOURNEY SECTION ==================== -->
+        <section id="journey" class="section section--journey">
             <div class="section__container">
                 <header class="section__header">
-                    <span class="section__label">04 / About</span>
-                    <h2 class="section__title">The Creator</h2>
+                    <span class="section__label">03 / My Path</span>
+                    <h2 class="section__title">Journey</h2>
+                    <p class="section__description">
+                        Documenting the journey of building immersive web experiences.
+                    </p>
                 </header>
-                
-                <div class="about__content">
-                    <div class="about__text">
-                        <h3 class="about__heading">Welcome to My Universe</h3>
-                        <p class="about__paragraph">
-                            I'm a developer who believes that the web should be more than functional—it should be an experience. 
-                            This portfolio is a testament to that philosophy, built entirely with vanilla technologies 
-                            to demonstrate what's possible without frameworks.
-                        </p>
-                        <p class="about__paragraph">
-                            Every scroll, every hover, every transition you experience here is crafted with intention. 
-                            The magnetic cursor that follows you, the smooth animations that guide your journey, 
-                            the achievements that reward your exploration—all designed to make this more than just a portfolio.
-                        </p>
-                        
-                        <div class="about__tech">
-                            <h4 class="about__tech-title">Tech Stack</h4>
-                            <div class="about__tech-grid">
-                                <div class="tech-badge">
-                                    <span class="tech-badge__icon">📄</span>
-                                    <span class="tech-badge__name">HTML5</span>
-                                </div>
-                                <div class="tech-badge">
-                                    <span class="tech-badge__icon">🎨</span>
-                                    <span class="tech-badge__name">CSS3</span>
-                                </div>
-                                <div class="tech-badge">
-                                    <span class="tech-badge__icon">⚡</span>
-                                    <span class="tech-badge__name">Vanilla JS</span>
-                                </div>
-                                <div class="tech-badge">
-                                    <span class="tech-badge__icon">🎬</span>
-                                    <span class="tech-badge__name">GSAP</span>
-                                </div>
-                            </div>
+
+                <div class="journey__timeline">
+                    <!-- Education -->
+                    <div class="timeline-item">
+                        <div class="timeline-item__marker">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z" />
+                            </svg>
+                        </div>
+                        <div class="timeline-item__content">
+                            <span class="timeline-item__date">2022 - 2026</span>
+                            <h3 class="timeline-item__title">B.E. Computer Science & Engineering</h3>
+                            <p class="timeline-item__subtitle">University College of Engineering, Tindivanam</p>
+                            <p class="timeline-item__description">GPA: 8.2 • Class Representative • NSS Volunteer</p>
                         </div>
                     </div>
-                    
-                    <div class="about__visual">
-                        <div class="about__card">
-                            <div class="about__avatar">
-                                <div class="about__avatar-glow"></div>
-                                <div class="about__avatar-image">
-                                    <!-- Placeholder for avatar -->
-                                    <svg viewBox="0 0 100 100" fill="currentColor">
-                                        <circle cx="50" cy="35" r="20"/>
-                                        <path d="M20 85c0-16.57 13.43-30 30-30s30 13.43 30 30"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="about__stats">
-                                <div class="about__stat">
-                                    <span class="about__stat-value">50+</span>
-                                    <span class="about__stat-label">Projects</span>
-                                </div>
-                                <div class="about__stat">
-                                    <span class="about__stat-value">3+</span>
-                                    <span class="about__stat-label">Years</span>
-                                </div>
-                                <div class="about__stat">
-                                    <span class="about__stat-value">∞</span>
-                                    <span class="about__stat-label">Passion</span>
-                                </div>
-                            </div>
+
+                    <!-- Experience 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-item__marker">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
+                            </svg>
+                        </div>
+                        <div class="timeline-item__content">
+                            <span class="timeline-item__date">March 2025</span>
+                            <h3 class="timeline-item__title">Power BI Intern</h3>
+                            <p class="timeline-item__subtitle">Cognifyz Technologies</p>
+                            <p class="timeline-item__description">Created interactive dashboards and visualizations.
+                                Learned data cleaning and modeling for actionable insights.</p>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-item__marker">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
+                            </svg>
+                        </div>
+                        <div class="timeline-item__content">
+                            <span class="timeline-item__date">July 2025</span>
+                            <h3 class="timeline-item__title">Full Stack Intern (MEAN)</h3>
+                            <p class="timeline-item__subtitle">RKS Infotech</p>
+                            <p class="timeline-item__description">Worked on Angular, Node.js, Express, and MongoDB
+                                projects. Hands-on with Git, GitHub, Postman, Figma, WordPress.</p>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="timeline-item">
+                        <div class="timeline-item__marker">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                            </svg>
+                        </div>
+                        <div class="timeline-item__content">
+                            <span class="timeline-item__date">Certifications</span>
+                            <h3 class="timeline-item__title">Professional Certifications</h3>
+                            <p class="timeline-item__description">
+                                • MERN Stack Application Development<br>
+                                • Data Analytics with Python
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- ==================== CONTACT SECTION ==================== -->
         <section id="contact" class="section section--contact">
             <div class="section__container">
                 <header class="section__header section__header--center">
-                    <span class="section__label">05 / Connect</span>
-                    <h2 class="section__title">Join the Layer</h2>
+                    <span class="section__label">04 / Get In Touch</span>
+                    <h2 class="section__title">Let's Build the Next Level</h2>
                     <p class="section__description">
-                        Ready to collaborate on something extraordinary? 
-                        Let's build the next level together.
+                        Open to internships, frontend roles, collaborations, and student projects.
+                        Let's create something amazing together.
                     </p>
                 </header>
-                
+
                 <div class="contact__content">
                     <div class="contact__cta">
-                        <a href="mailto:your.email@example.com" class="btn btn--primary btn--large btn--magnetic">
+                        <a href="mailto:sanjayias91@gmail.com" class="btn btn--primary btn--large btn--magnetic">
                             <span class="btn__text">Contact Me Now</span>
                             <span class="btn__glow"></span>
                         </a>
                     </div>
-                    
+
+                    <div class="contact__info">
+                        <div class="contact__item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            <span>sanjayias91@gmail.com</span>
+                        </div>
+                        <div class="contact__item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <span>Chengalpattu, Tamil Nadu, India</span>
+                        </div>
+                    </div>
+
                     <div class="contact__socials">
-                        <a href="#" class="social-link btn--magnetic" aria-label="GitHub">
+                        <a href="https://github.com/Sjking2025" target="_blank" class="social-link btn--magnetic"
+                            aria-label="GitHub">
                             <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                             </svg>
                         </a>
-                        <a href="#" class="social-link btn--magnetic" aria-label="LinkedIn">
+                        <a href="https://linkedin.com/in/sanjayr005" target="_blank" class="social-link btn--magnetic"
+                            aria-label="LinkedIn">
                             <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg>
                         </a>
-                        <a href="#" class="social-link btn--magnetic" aria-label="Twitter">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        <a href="https://portfolio-mr-sj.vercel.app" target="_blank" class="social-link btn--magnetic"
+                            aria-label="Portfolio">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="2" y1="12" x2="22" y2="12" />
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                             </svg>
                         </a>
                     </div>
@@ -568,10 +605,10 @@
     <footer class="footer">
         <div class="footer__container">
             <p class="footer__text">
-                © 2024 Metagame Layer Portal. Crafted with passion and GSAP.
+                © 2025 Sanjay R. Crafted with passion, Vanilla JS & GSAP.
             </p>
             <p class="footer__credits">
-                Built with HTML, CSS, Vanilla JS & GSAP
+                <a href="https://github.com/Sjking2025/gsap_portfolio_mrsj" target="_blank">View Source Code</a>
             </p>
         </div>
     </footer>
@@ -579,7 +616,7 @@
     <!-- GSAP CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    
+
     <!-- Custom Scripts -->
     <script src="scripts/themes.js"></script>
     <script src="scripts/cursor.js"></script>
@@ -588,4 +625,5 @@
     <script src="scripts/achievements.js"></script>
     <script src="scripts/main.js"></script>
 </body>
+
 </html>

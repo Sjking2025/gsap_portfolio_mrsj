@@ -100,6 +100,11 @@ const ScrollManager = {
                 opacity: 0,
                 duration: 0.8
             }, '-=0.4')
+            .from('.hero__micro-copy', {
+                y: 20,
+                opacity: 0,
+                duration: 0.6
+            }, '-=0.3')
             .from('.hero__cta-group .btn', {
                 y: 30,
                 opacity: 0,
@@ -129,8 +134,8 @@ const ScrollManager = {
      * Section entrance animations
      */
     initSectionAnimations() {
-        // Generic section animations
-        const sections = ['#nexus', '#vault', '#about', '#contact'];
+        // Generic section animations for portfolio
+        const sections = ['#projects', '#skills', '#journey', '#contact'];
 
         sections.forEach(sectionId => {
             const section = document.querySelector(sectionId);
@@ -152,52 +157,87 @@ const ScrollManager = {
                     }
                 });
             }
-
-            // Cards animation
-            const cards = section.querySelectorAll('.card, .achievement-card, .tech-badge');
-            if (cards.length) {
-                gsap.from(cards, {
-                    y: 60,
-                    opacity: 0,
-                    scale: 0.95,
-                    duration: 0.6,
-                    stagger: 0.1,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: section.querySelector('.nexus__grid, .vault__grid, .about__tech-grid'),
-                        start: 'top 80%',
-                        toggleActions: 'play none none reverse'
-                    }
-                });
-            }
         });
 
-        // About section specific
-        const aboutCard = document.querySelector('.about__card');
-        if (aboutCard) {
-            gsap.from(aboutCard, {
-                x: 100,
+        // Featured project animation
+        const featuredProject = document.querySelector('.featured-project');
+        if (featuredProject) {
+            gsap.from(featuredProject, {
+                y: 80,
                 opacity: 0,
                 duration: 1,
                 ease: 'power3.out',
                 scrollTrigger: {
-                    trigger: aboutCard,
+                    trigger: featuredProject,
                     start: 'top 80%',
                     toggleActions: 'play none none reverse'
                 }
             });
         }
 
-        // Vault progress bar
-        const vaultProgress = document.querySelector('.vault__progress');
-        if (vaultProgress) {
-            gsap.from(vaultProgress, {
-                scaleX: 0,
+        // Project cards animation
+        const projectCards = document.querySelectorAll('.projects__grid .card');
+        if (projectCards.length) {
+            gsap.from(projectCards, {
+                y: 60,
                 opacity: 0,
-                duration: 0.8,
+                scale: 0.95,
+                duration: 0.6,
+                stagger: 0.15,
                 ease: 'power3.out',
                 scrollTrigger: {
-                    trigger: vaultProgress,
+                    trigger: '.projects__grid',
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        }
+
+        // Skills categories animation
+        const skillCategories = document.querySelectorAll('.skill-category');
+        if (skillCategories.length) {
+            gsap.from(skillCategories, {
+                y: 60,
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.1,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: '.skills__grid',
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        }
+
+        // Timeline items animation
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        if (timelineItems.length) {
+            gsap.from(timelineItems, {
+                x: -50,
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.2,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: '.journey__timeline',
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        }
+
+        // Contact section animation
+        const contactContent = document.querySelector('.contact__content');
+        if (contactContent) {
+            gsap.from(contactContent.children, {
+                y: 40,
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.15,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: contactContent,
                     start: 'top 80%',
                     toggleActions: 'play none none reverse'
                 }
