@@ -454,20 +454,23 @@ const ScrollManager = {
                 }
             });
 
+            // 3D tilt effect on mousemove - subtle rotation only
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 15;
-                const rotateY = (centerX - x) / 15;
+                // Reduced tilt intensity for smoother effect
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
 
                 gsap.to(card, {
                     rotateX: rotateX,
                     rotateY: rotateY,
-                    duration: 0.3,
-                    ease: 'power2.out'
+                    duration: 0.5,
+                    ease: 'power2.out',
+                    overwrite: 'auto'
                 });
             });
         });
@@ -699,9 +702,16 @@ const ScrollManager = {
     },
 
     /**
-     * Enhanced magnetic hover for buttons
+     * Magnetic hover for buttons - DISABLED to prevent cursor conflicts
+     * The cursor.js handles hover effects for interactive elements
      */
     initMagneticHoverEffects() {
+        // Magnetic effects disabled - was causing cursor wobble
+        // The cursor now handles all hover scaling effects
+        // If you want to re-enable button magnetic pull,
+        // uncomment the code below:
+
+        /*
         const magneticItems = document.querySelectorAll('.btn--magnetic');
 
         magneticItems.forEach(item => {
@@ -716,16 +726,6 @@ const ScrollManager = {
                     duration: 0.4,
                     ease: 'power2.out'
                 });
-
-                // Move glow if exists
-                const glow = item.querySelector('.btn__glow');
-                if (glow) {
-                    gsap.to(glow, {
-                        x: x * 0.5,
-                        y: y * 0.5,
-                        duration: 0.4
-                    });
-                }
             });
 
             item.addEventListener('mouseleave', () => {
@@ -735,13 +735,9 @@ const ScrollManager = {
                     duration: 0.4,
                     ease: 'elastic.out(1, 0.3)'
                 });
-
-                const glow = item.querySelector('.btn__glow');
-                if (glow) {
-                    gsap.to(glow, { x: 0, y: 0, duration: 0.4 });
-                }
             });
         });
+        */
     },
 
     /**

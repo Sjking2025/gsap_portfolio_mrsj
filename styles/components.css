@@ -717,37 +717,61 @@
     left: 0;
     z-index: var(--z-cursor);
     pointer-events: none;
-    mix-blend-mode: difference;
 }
 
 .cursor__dot {
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 8px;
     height: 8px;
-    background: #fff;
+    background: var(--primary);
     border-radius: 50%;
-    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: calc(var(--z-cursor) + 1);
+    /* Smooth transition for scaling */
+    transition: transform 0.1s ease-out, opacity 0.3s ease;
 }
 
 .cursor__ring {
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 40px;
     height: 40px;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid var(--primary);
     border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+    pointer-events: none;
+    z-index: var(--z-cursor);
+    opacity: 0.5;
+    /* CSS transition for smooth following on ring */
+    transition:
+        transform 0.15s ease-out,
+        opacity 0.3s ease,
+        width 0.25s ease,
+        height 0.25s ease,
+        border-color 0.25s ease;
 }
 
-.cursor.hovering .cursor__ring {
+/* Hovering state - applied via JS classes */
+.cursor__ring.cursor--hovering {
     width: 60px;
     height: 60px;
     border-color: var(--primary);
+    opacity: 0.8;
+}
+
+.cursor__dot.cursor--hovering {
+    transform: translate(-50%, -50%) scale(0.5);
 }
 
 /* Hide on touch devices */
-@media (hover: none) or (pointer: coarse) {
-    .cursor {
+@media (hover: none),
+(pointer: coarse) {
+
+    .cursor,
+    .cursor__dot,
+    .cursor__ring {
         display: none !important;
     }
 }
