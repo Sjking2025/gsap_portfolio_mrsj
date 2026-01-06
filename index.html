@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Metagame Layer Portal - A premium gaming portfolio experience with cinematic transitions and immersive interactions">
+    <title>Metagame Layer Portal</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body data-theme="velvet-dusk">
+    <!-- Custom Cursor -->
+    <div class="cursor" aria-hidden="true">
+        <div class="cursor__dot"></div>
+        <div class="cursor__ring"></div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav__container">
+            <a href="#hero" class="nav__logo">
+                <span class="nav__logo-text">METALAYER</span>
+            </a>
+            
+            <ul class="nav__links">
+                <li><a href="#nexus" class="nav__link">Nexus</a></li>
+                <li><a href="#vault" class="nav__link">Vault</a></li>
+                <li><a href="#prologue" class="nav__link">Prologue</a></li>
+                <li><a href="#about" class="nav__link">About</a></li>
+                <li><a href="#contact" class="nav__link nav__link--cta">Contact</a></li>
+            </ul>
+            
+            <div class="nav__controls">
+                <!-- Theme Selector -->
+                <div class="theme-selector">
+                    <button class="theme-selector__toggle" aria-label="Select theme" aria-expanded="false">
+                        <svg class="theme-selector__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                    </button>
+                    <div class="theme-selector__dropdown" role="menu">
+                        <button class="theme-option" data-theme="mocha-mousse" role="menuitem">
+                            <span class="theme-option__swatch"></span>
+                            <span class="theme-option__name">Mocha Mousse</span>
+                        </button>
+                        <button class="theme-option" data-theme="velvet-dusk" role="menuitem">
+                            <span class="theme-option__swatch"></span>
+                            <span class="theme-option__name">Velvet Dusk</span>
+                        </button>
+                        <button class="theme-option" data-theme="bioluminescent" role="menuitem">
+                            <span class="theme-option__swatch"></span>
+                            <span class="theme-option__name">Bioluminescent</span>
+                        </button>
+                        <button class="theme-option" data-theme="rose-gold-noir" role="menuitem">
+                            <span class="theme-option__swatch"></span>
+                            <span class="theme-option__name">Rose Gold Noir</span>
+                        </button>
+                        <button class="theme-option" data-theme="aurora-borealis" role="menuitem">
+                            <span class="theme-option__swatch"></span>
+                            <span class="theme-option__name">Aurora Borealis</span>
+                        </button>
+                        <button class="theme-option" data-theme="peach-fuzz" role="menuitem">
+                            <span class="theme-option__swatch"></span>
+                            <span class="theme-option__name">Peach Fuzz</span>
+                        </button>
+                        <button class="theme-option" data-theme="obsidian-flame" role="menuitem">
+                            <span class="theme-option__swatch"></span>
+                            <span class="theme-option__name">Obsidian Flame</span>
+                        </button>
+                        <button class="theme-option" data-theme="vintage-synthwave" role="menuitem">
+                            <span class="theme-option__swatch"></span>
+                            <span class="theme-option__name">Vintage Synthwave</span>
+                        </button>
+                        <button class="theme-option" data-theme="sage-serenity" role="menuitem">
+                            <span class="theme-option__swatch"></span>
+                            <span class="theme-option__name">Sage Serenity</span>
+                        </button>
+                        <button class="theme-option" data-theme="chrome-mirage" role="menuitem">
+                            <span class="theme-option__swatch"></span>
+                            <span class="theme-option__name">Chrome Mirage</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Audio Control -->
+                <button class="audio-toggle" aria-label="Toggle audio" data-playing="false">
+                    <svg class="audio-toggle__icon audio-toggle__icon--on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    </svg>
+                    <svg class="audio-toggle__icon audio-toggle__icon--off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                        <line x1="23" y1="9" x2="17" y2="15"/>
+                        <line x1="17" y1="9" x2="23" y2="15"/>
+                    </svg>
+                </button>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="nav__burger-line"></span>
+                    <span class="nav__burger-line"></span>
+                    <span class="nav__burger-line"></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="nav__mobile-menu" aria-hidden="true">
+            <ul class="nav__mobile-links">
+                <li><a href="#nexus" class="nav__mobile-link">Nexus</a></li>
+                <li><a href="#vault" class="nav__mobile-link">Vault</a></li>
+                <li><a href="#prologue" class="nav__mobile-link">Prologue</a></li>
+                <li><a href="#about" class="nav__mobile-link">About</a></li>
+                <li><a href="#contact" class="nav__mobile-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Achievement Toast Container -->
+    <div class="achievement-container" aria-live="polite"></div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="section section--hero">
+            <div class="hero__background">
+                <div class="hero__gradient"></div>
+                <div class="hero__particles" aria-hidden="true"></div>
+            </div>
+            <div class="hero__content">
+                <span class="hero__subtitle">Welcome to the</span>
+                <h1 class="hero__title">
+                    <span class="hero__title-line">Metagame</span>
+                    <span class="hero__title-line hero__title-line--accent">Layer Portal</span>
+                </h1>
+                <p class="hero__description">
+                    Explore a universe where gaming meets innovation. Discover projects, achievements, and the story behind the code.
+                </p>
+                <div class="hero__cta-group">
+                    <a href="#nexus" class="btn btn--primary btn--magnetic">
+                        <span class="btn__text">Enter Nexus</span>
+                        <span class="btn__glow"></span>
+                    </a>
+                    <a href="#prologue" class="btn btn--secondary btn--magnetic">
+                        <span class="btn__text">Watch Story</span>
+                    </a>
+                </div>
+                <div class="hero__scroll-indicator">
+                    <span class="hero__scroll-text">Scroll to explore</span>
+                    <div class="hero__scroll-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12l7 7 7-7"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nexus Section - Social Hub -->
+        <section id="nexus" class="section section--nexus">
+            <div class="section__container">
+                <header class="section__header">
+                    <span class="section__label">01 / Social Hub</span>
+                    <h2 class="section__title">The Nexus</h2>
+                    <p class="section__description">
+                        A convergence point where ideas, projects, and connections come together. 
+                        This is where the journey begins.
+                    </p>
+                </header>
+                
+                <div class="nexus__grid">
+                    <!-- Featured Project Card -->
+                    <article class="card card--featured card--3d">
+                        <div class="card__glow"></div>
+                        <div class="card__content">
+                            <div class="card__badge">Featured</div>
+                            <h3 class="card__title">Project Radiant</h3>
+                            <p class="card__text">
+                                A revolutionary approach to web experiences, combining cutting-edge 
+                                technology with immersive design principles.
+                            </p>
+                            <div class="card__stats">
+                                <span class="card__stat">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    4.9
+                                </span>
+                                <span class="card__stat">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                        <circle cx="12" cy="12" r="3"/>
+                                    </svg>
+                                    2.4k
+                                </span>
+                            </div>
+                            <a href="#" class="card__link btn--magnetic">Explore →</a>
+                        </div>
+                    </article>
+                    
+                    <!-- Project Cards -->
+                    <article class="card card--3d">
+                        <div class="card__glow"></div>
+                        <div class="card__content">
+                            <div class="card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                                    <polyline points="2 17 12 22 22 17"/>
+                                    <polyline points="2 12 12 17 22 12"/>
+                                </svg>
+                            </div>
+                            <h3 class="card__title">Zigma Protocol</h3>
+                            <p class="card__text">
+                                Next-generation data architecture with enhanced security layers.
+                            </p>
+                            <a href="#" class="card__link btn--magnetic">Learn More →</a>
+                        </div>
+                    </article>
+                    
+                    <article class="card card--3d">
+                        <div class="card__glow"></div>
+                        <div class="card__content">
+                            <div class="card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                </svg>
+                            </div>
+                            <h3 class="card__title">Azul Network</h3>
+                            <p class="card__text">
+                                Distributed computing platform for seamless global connectivity.
+                            </p>
+                            <a href="#" class="card__link btn--magnetic">Discover →</a>
+                        </div>
+                    </article>
+                    
+                    <article class="card card--3d">
+                        <div class="card__glow"></div>
+                        <div class="card__content">
+                            <div class="card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                            <h3 class="card__title">Sentinel Core</h3>
+                            <p class="card__text">
+                                Advanced security framework protecting digital ecosystems.
+                            </p>
+                            <a href="#" class="card__link btn--magnetic">Explore →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vault Section - Achievements -->
+        <section id="vault" class="section section--vault">
+            <div class="section__container">
+                <header class="section__header">
+                    <span class="section__label">02 / Achievements</span>
+                    <h2 class="section__title">The Vault</h2>
+                    <p class="section__description">
+                        Your journey through this portal unlocks achievements. 
+                        Explore, interact, and collect them all.
+                    </p>
+                </header>
+                
+                <div class="vault__progress">
+                    <div class="vault__progress-bar">
+                        <div class="vault__progress-fill" style="--progress: 0%"></div>
+                    </div>
+                    <span class="vault__progress-text">0 / 6 Achievements Unlocked</span>
+                </div>
+                
+                <div class="vault__grid">
+                    <article class="achievement-card" data-achievement="explorer">
+                        <div class="achievement-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                            </svg>
+                        </div>
+                        <h3 class="achievement-card__title">Explorer</h3>
+                        <p class="achievement-card__description">Visit all sections of the portal</p>
+                        <div class="achievement-card__status">
+                            <span class="achievement-card__lock">🔒</span>
+                        </div>
+                    </article>
+                    
+                    <article class="achievement-card" data-achievement="nexus-visitor">
+                        <div class="achievement-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3 class="achievement-card__title">Nexus Member</h3>
+                        <p class="achievement-card__description">Enter the Nexus hub</p>
+                        <div class="achievement-card__status">
+                            <span class="achievement-card__lock">🔒</span>
+                        </div>
+                    </article>
+                    
+                    <article class="achievement-card" data-achievement="audiophile">
+                        <div class="achievement-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                            </svg>
+                        </div>
+                        <h3 class="achievement-card__title">Audiophile</h3>
+                        <p class="achievement-card__description">Enable cinematic audio</p>
+                        <div class="achievement-card__status">
+                            <span class="achievement-card__lock">🔒</span>
+                        </div>
+                    </article>
+                    
+                    <article class="achievement-card" data-achievement="storyteller">
+                        <div class="achievement-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="achievement-card__title">Storyteller</h3>
+                        <p class="achievement-card__description">Complete the Prologue</p>
+                        <div class="achievement-card__status">
+                            <span class="achievement-card__lock">🔒</span>
+                        </div>
+                    </article>
+                    
+                    <article class="achievement-card" data-achievement="designer">
+                        <div class="achievement-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="5"/>
+                                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"/>
+                            </svg>
+                        </div>
+                        <h3 class="achievement-card__title">Theme Master</h3>
+                        <p class="achievement-card__description">Change the color theme</p>
+                        <div class="achievement-card__status">
+                            <span class="achievement-card__lock">🔒</span>
+                        </div>
+                    </article>
+                    
+                    <article class="achievement-card" data-achievement="connector">
+                        <div class="achievement-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="achievement-card__title">Connector</h3>
+                        <p class="achievement-card__description">Reach the Contact section</p>
+                        <div class="achievement-card__status">
+                            <span class="achievement-card__lock">🔒</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prologue Section - Story/Lore -->
+        <section id="prologue" class="section section--prologue">
+            <div class="prologue__wrapper">
+                <header class="section__header">
+                    <span class="section__label">03 / Story</span>
+                    <h2 class="section__title">The Prologue</h2>
+                </header>
+                
+                <div class="prologue__content">
+                    <div class="prologue__panel" data-panel="1">
+                        <div class="prologue__panel-content">
+                            <span class="prologue__chapter">Chapter I</span>
+                            <h3 class="prologue__heading">The Beginning</h3>
+                            <p class="prologue__text">
+                                In the vast digital landscape, where pixels meet purpose, 
+                                a new kind of creator emerged. Armed with code as their canvas 
+                                and interaction as their medium, they set out to blur the lines 
+                                between functionality and artistry.
+                            </p>
+                        </div>
+                        <div class="prologue__panel-visual">
+                            <div class="prologue__orb prologue__orb--1"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="prologue__panel" data-panel="2">
+                        <div class="prologue__panel-content">
+                            <span class="prologue__chapter">Chapter II</span>
+                            <h3 class="prologue__heading">The Journey</h3>
+                            <p class="prologue__text">
+                                Through countless iterations and midnight debugging sessions, 
+                                expertise was forged. Each project became a stepping stone, 
+                                each challenge a lesson. The path wasn't always clear, 
+                                but the destination was always worth it.
+                            </p>
+                        </div>
+                        <div class="prologue__panel-visual">
+                            <div class="prologue__orb prologue__orb--2"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="prologue__panel" data-panel="3">
+                        <div class="prologue__panel-content">
+                            <span class="prologue__chapter">Chapter III</span>
+                            <h3 class="prologue__heading">The Vision</h3>
+                            <p class="prologue__text">
+                                Today, the mission remains: to create digital experiences 
+                                that don't just function—they inspire. Every animation tells a story, 
+                                every interaction builds connection. This is the metagame layer, 
+                                where technology becomes magic.
+                            </p>
+                        </div>
+                        <div class="prologue__panel-visual">
+                            <div class="prologue__orb prologue__orb--3"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="prologue__progress">
+                    <div class="prologue__progress-track">
+                        <div class="prologue__progress-fill"></div>
+                    </div>
+                    <div class="prologue__progress-dots">
+                        <span class="prologue__dot" data-panel="1"></span>
+                        <span class="prologue__dot" data-panel="2"></span>
+                        <span class="prologue__dot" data-panel="3"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section section--about">
+            <div class="section__container">
+                <header class="section__header">
+                    <span class="section__label">04 / About</span>
+                    <h2 class="section__title">The Creator</h2>
+                </header>
+                
+                <div class="about__content">
+                    <div class="about__text">
+                        <h3 class="about__heading">Welcome to My Universe</h3>
+                        <p class="about__paragraph">
+                            I'm a developer who believes that the web should be more than functional—it should be an experience. 
+                            This portfolio is a testament to that philosophy, built entirely with vanilla technologies 
+                            to demonstrate what's possible without frameworks.
+                        </p>
+                        <p class="about__paragraph">
+                            Every scroll, every hover, every transition you experience here is crafted with intention. 
+                            The magnetic cursor that follows you, the smooth animations that guide your journey, 
+                            the achievements that reward your exploration—all designed to make this more than just a portfolio.
+                        </p>
+                        
+                        <div class="about__tech">
+                            <h4 class="about__tech-title">Tech Stack</h4>
+                            <div class="about__tech-grid">
+                                <div class="tech-badge">
+                                    <span class="tech-badge__icon">📄</span>
+                                    <span class="tech-badge__name">HTML5</span>
+                                </div>
+                                <div class="tech-badge">
+                                    <span class="tech-badge__icon">🎨</span>
+                                    <span class="tech-badge__name">CSS3</span>
+                                </div>
+                                <div class="tech-badge">
+                                    <span class="tech-badge__icon">⚡</span>
+                                    <span class="tech-badge__name">Vanilla JS</span>
+                                </div>
+                                <div class="tech-badge">
+                                    <span class="tech-badge__icon">🎬</span>
+                                    <span class="tech-badge__name">GSAP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about__visual">
+                        <div class="about__card">
+                            <div class="about__avatar">
+                                <div class="about__avatar-glow"></div>
+                                <div class="about__avatar-image">
+                                    <!-- Placeholder for avatar -->
+                                    <svg viewBox="0 0 100 100" fill="currentColor">
+                                        <circle cx="50" cy="35" r="20"/>
+                                        <path d="M20 85c0-16.57 13.43-30 30-30s30 13.43 30 30"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="about__stats">
+                                <div class="about__stat">
+                                    <span class="about__stat-value">50+</span>
+                                    <span class="about__stat-label">Projects</span>
+                                </div>
+                                <div class="about__stat">
+                                    <span class="about__stat-value">3+</span>
+                                    <span class="about__stat-label">Years</span>
+                                </div>
+                                <div class="about__stat">
+                                    <span class="about__stat-value">∞</span>
+                                    <span class="about__stat-label">Passion</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section section--contact">
+            <div class="section__container">
+                <header class="section__header section__header--center">
+                    <span class="section__label">05 / Connect</span>
+                    <h2 class="section__title">Join the Layer</h2>
+                    <p class="section__description">
+                        Ready to collaborate on something extraordinary? 
+                        Let's build the next level together.
+                    </p>
+                </header>
+                
+                <div class="contact__content">
+                    <div class="contact__cta">
+                        <a href="mailto:your.email@example.com" class="btn btn--primary btn--large btn--magnetic">
+                            <span class="btn__text">Contact Me Now</span>
+                            <span class="btn__glow"></span>
+                        </a>
+                    </div>
+                    
+                    <div class="contact__socials">
+                        <a href="#" class="social-link btn--magnetic" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link btn--magnetic" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link btn--magnetic" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <p class="footer__text">
+                © 2024 Metagame Layer Portal. Crafted with passion and GSAP.
+            </p>
+            <p class="footer__credits">
+                Built with HTML, CSS, Vanilla JS & GSAP
+            </p>
+        </div>
+    </footer>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="scripts/themes.js"></script>
+    <script src="scripts/cursor.js"></script>
+    <script src="scripts/scroll.js"></script>
+    <script src="scripts/audio.js"></script>
+    <script src="scripts/achievements.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
